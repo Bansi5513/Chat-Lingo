@@ -5,6 +5,7 @@ import java.util.Scanner;
 class UserInfo{
     Scanner sc = new Scanner(System.in);
     String name, lang;
+
     public void start(){
         System.out.print("\nEnter your name : ");
         name = sc.nextLine();

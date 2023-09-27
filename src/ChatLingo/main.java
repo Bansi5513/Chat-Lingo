@@ -15,13 +15,41 @@ public class main {
         module.start();
         module.selectLanguage();
         String lang = module.langLearn;
+        String Level = module.level;
 
-        // You can add calls to other methods here based on user's choices
-        if (lang != null && !lang.isEmpty()) {
+        if (lang != null && !lang.isEmpty()  &&  Level != null && !Level.isEmpty()) {
+            Language languageInstance = null;
 
-            // further functionalities
+
+            if (lang.equalsIgnoreCase("spanish")) {
+                languageInstance = new spanish();
+            } else if (lang.equalsIgnoreCase("french")) {
+                languageInstance = new french();
+            }else if (lang.equalsIgnoreCase("german")) {
+                languageInstance = new german();
+            }else if (lang.equalsIgnoreCase("chinese")) {
+                languageInstance = new chinese();
+            }else if (lang.equalsIgnoreCase("hindi")) {
+                languageInstance = new hindi();
+            }else{
+                System.out.println("\nSorry! ChatLingo doesn't offer modules for that language.");
+            }
+
+
+            if (languageInstance != null) {
+                // Depending on the user's input, call methods on the created object
+                if (Level.equalsIgnoreCase("Beginner Level")) {
+                    languageInstance.BeginnerLevel();
+                } else if (Level.equalsIgnoreCase("Intermediate Level")) {
+                    languageInstance.IntermediateLevel();
+                } else if (Level.equalsIgnoreCase("Advanced Level")) {
+                    languageInstance.AdvancedLevel();
+                } else {
+                    System.out.println("Invalid level input.");
+                }
+            }
         }
+
 
     }
 }
-
