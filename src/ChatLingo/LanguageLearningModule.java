@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 class LanguageLearningModule extends UserInfo{
     Scanner sc = new Scanner(System.in);
-    String choice, level, langLearn;
+    String choice;
+    private String langLearn;
+    private String level;
 
     public void start(){
         System.out.println("\nWelcome to the Language Learning Module!");
@@ -73,7 +75,7 @@ class LanguageLearningModule extends UserInfo{
                 }
             }
         }else{
-            System.out.println("\nDo you wish to learn any language [Y/N]? ");
+            System.out.print("\nDo you wish to learn any language [Y/N]? ");
             choice = sc.nextLine();
             if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")){
                 System.out.print("\nEnter the language : ");
@@ -100,11 +102,14 @@ class LanguageLearningModule extends UserInfo{
                 }
             }
         }
-
     }
 
-//    public void displayLanguageInfo(Language languageInstance) {
-//        // Display language-specific information
-//    }
+    public String getLangLearn(){
+        return langLearn;
+    }
+
+    public String getLevel(){
+        return level;
+    }
 
 }

@@ -4,9 +4,7 @@ abstract class Language{
     abstract public void BeginnerLevel();
     abstract public void IntermediateLevel();
     abstract public void AdvancedLevel();
-
-//    public void practice() {
-//        // Generic practice method
-//    }
-
+    abstract public void GrammarPractice();
+    abstract public void TakeQuiz();
+    abstract public int getScore();
 }
