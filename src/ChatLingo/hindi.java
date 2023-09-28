@@ -71,43 +71,45 @@ public class hindi extends Language{
 
             // Basic Sentence Structure
             {
-                    {"Subject + Verb + Object", "मैं एक सेब खाता/खाती हूँ (I eat an apple)."}
+                    {"मैं एक सेब खाता/खाती हूँ (Subject + Verb + Object)", "I eat an apple."}
             }
     };
 
     private static final String[] hindiSectionTitles = {"Nouns and Articles", "Subject Pronouns", "Verb 'होना (Hona)' (To Be)", "Verb 'रखना (Rakhna)' (To Have)", "Basic Sentence Structure"};
     int score;
     public void BeginnerLevel(){
-        System.out.println("\nBeginner Hindi Words:\n");
+        System.out.println("\n***** Beginner Hindi Words *****\n");
         for (String[] wordPair : hindiWordsWithTranslationsAndLevels[0]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
     public void IntermediateLevel(){
-        System.out.println("\nIntermediate Hindi Words:\n");
+        System.out.println("\n***** Intermediate Hindi Words *****\n");
         for (String[] wordPair : hindiWordsWithTranslationsAndLevels[1]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
     public void AdvancedLevel(){
-        System.out.println("\nAdvanced Hindi Words:\n");
+        System.out.println("\n***** Advanced Hindi Words *****\n");
         for (String[] wordPair : hindiWordsWithTranslationsAndLevels[2]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
     public void GrammarPractice(){
+        System.out.println("\n******************************************************************************************");
         for (int i = 0; i < hindiGrammarModule.length; i++) {
             System.out.println("[" + hindiSectionTitles[i] + "]");
             for (String[] topic : hindiGrammarModule[i]) {
                 for (int j = 0; j < topic.length; j += 2) {
-                    String french = topic[j];
+                    String hindi = topic[j];
                     String english = topic[j + 1];
-                    System.out.print("French: " + french + "\t\t\t");
+                    System.out.print("Hindi: " + hindi + "\t\t\t");
                     System.out.println("English: " + english);
                 }
             }
             System.out.println();
         }
+        System.out.println("******************************************************************************************");
     }
 
     public void TakeQuiz(){
@@ -119,7 +121,7 @@ public class hindi extends Language{
         boolean[] usedGrammarIndices = new boolean[hindiGrammarModule.length];
 
         // Quiz for basic words and translations
-        System.out.println("\nFrench Basic Word Quiz:");
+        System.out.println("\n******************** Hindi Basic Word Quiz ********************");
         for (int i = 0; i < 5; i++) {
             int randomIndex;
             do {
@@ -140,7 +142,7 @@ public class hindi extends Language{
         }
 
         // Quiz for grammar
-        System.out.println("\nFrench Grammar Quiz:");
+        System.out.println("\n******************** Hindi Grammar Quiz ********************");
         for (int i = 0; i < 5; i++) {
             int randomIndex;
             do {
@@ -150,17 +152,17 @@ public class hindi extends Language{
             usedGrammarIndices[randomIndex] = true;
 
             String[] sentencePair = hindiGrammarModule[randomIndex][0];
-            System.out.println("\nTranslate: " + sentencePair[1]);
+            System.out.println("\nTranslate: \n" + sentencePair[0]);
             String userTranslation = sc.nextLine().trim();
-            if (userTranslation.equalsIgnoreCase(sentencePair[0])) {
+            if (userTranslation.equalsIgnoreCase(sentencePair[1])) {
                 System.out.println("Correct!");
                 score++;
             } else {
-                System.out.println("Incorrect. The correct answer is: " + sentencePair[0]);
+                System.out.println("Incorrect. The correct answer is: " + sentencePair[1]);
             }
         }
 
-        System.out.println("\nQuiz complete! Your score: " + score + " out of 10");
+        System.out.println("\nQUIZ COMPLETE! YOUR SCORE: " + score + " OUT OF 10");
     }
 
     public int getScore(){

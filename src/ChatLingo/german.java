@@ -72,43 +72,45 @@ public class german extends Language{
 
             // Basic Sentence Structure
             {
-                    {"Subject + Verb + Object", "Ich esse einen Apfel (I eat an apple)."}
+                    {"Ich esse einen Apfel (Subject + Verb + Object)", "I eat an apple."}
             }
     };
 
     private static final String[] germanSectionTitles = {"Nouns and Articles", "Subject Pronouns", "Verbs 'Sein' (To Be)", "Verbs 'Haben' (To Have)", "Basic Sentence Structure"};
     int score;
     public void BeginnerLevel(){
-        System.out.println("\nBeginner German Words:\n");
+        System.out.println("\n***** Beginner German Words *****\n");
         for (String[] wordPair : germanWordsWithTranslationsAndLevels[0]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
     public void IntermediateLevel(){
-        System.out.println("\nIntermediate German Words:\n");
+        System.out.println("\n***** Intermediate German Words *****\n");
         for (String[] wordPair : germanWordsWithTranslationsAndLevels[1]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
     public void AdvancedLevel(){
-        System.out.println("\nAdvanced German Words:\n");
+        System.out.println("\n***** Advanced German Words *****\n");
         for (String[] wordPair : germanWordsWithTranslationsAndLevels[2]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
     public void GrammarPractice(){
+        System.out.println("\n******************************************************************************************");
         for (int i = 0; i < germanGrammarModule.length; i++) {
             System.out.println("[" + germanSectionTitles[i] + "]");
             for (String[] topic : germanGrammarModule[i]) {
                 for (int j = 0; j < topic.length; j += 2) {
-                    String french = topic[j];
+                    String german = topic[j];
                     String english = topic[j + 1];
-                    System.out.print("French: " + french + "\t\t\t");
+                    System.out.print("German: " + german + "\t\t\t");
                     System.out.println("English: " + english);
                 }
             }
             System.out.println();
         }
+        System.out.println("******************************************************************************************");
     }
 
     public void TakeQuiz(){
@@ -120,7 +122,7 @@ public class german extends Language{
         boolean[] usedGrammarIndices = new boolean[germanGrammarModule.length];
 
         // Quiz for basic words and translations
-        System.out.println("\nFrench Basic Word Quiz:");
+        System.out.println("\n******************** German Basic Word Quiz ********************");
         for (int i = 0; i < 5; i++) {
             int randomIndex;
             do {
@@ -141,7 +143,7 @@ public class german extends Language{
         }
 
         // Quiz for grammar
-        System.out.println("\nFrench Grammar Quiz:");
+        System.out.println("\n\n******************** German Grammar Quiz ********************");
         for (int i = 0; i < 5; i++) {
             int randomIndex;
             do {
@@ -161,7 +163,7 @@ public class german extends Language{
             }
         }
 
-        System.out.println("\nQuiz complete! Your score: " + score + " out of 10");
+        System.out.println("\nQUIZ COMPLETE! YOUR SCORE: " + score + " OUT OF 10");
     }
 
     public int getScore(){

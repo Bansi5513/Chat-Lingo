@@ -6,7 +6,12 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\nWelcome to the Language Chatbot!");
+        String decorativeLine = "=================================================================================================";
+        String decorativeLine2 = "------------------------------------------------------------------------------------------------";
+
+        System.out.println("\n" + decorativeLine);
+        System.out.println("\t\t\t\t\t  Welcome to ChatLingo - Your Language Learning Chatbot!");
+        System.out.println(decorativeLine);
 
         UserInfo user1 = new UserInfo();
         user1.start();
@@ -49,7 +54,7 @@ public class Main {
                 } else if (Level.equalsIgnoreCase("Advanced Level")) {
                     languageInstance.AdvancedLevel();
                 } else {
-                    System.out.println("Invalid level input.");
+                    System.out.println("Invalid level input. Please choose Beginner, Intermediate, or Advanced.");
                 }
 
                 System.out.print("\nDo you want to practice grammar for " + langLearn + " [Y/N]? ");
@@ -64,17 +69,19 @@ public class Main {
                     languageInstance.TakeQuiz();
                 }
 
-                System.out.println("\nHEllO " + Name.toUpperCase() + " ! Here are your details.");
+                System.out.println("\n" + decorativeLine2);
+                System.out.println("HEllO " + Name.toUpperCase() + " ! Here are your details");
                 System.out.println("Language you are comfortable with : " + Lang.toUpperCase());
                 System.out.println("Language and the level you choose to learn : [" + langLearn.toUpperCase() + ", " + Level.toUpperCase() + "]");
                 if(choice1.equalsIgnoreCase("yes") || choice1.equalsIgnoreCase("y")){
                     System.out.println("You practiced " + langLearn.toUpperCase() + " grammar");
                 }
-                if(choice1.equalsIgnoreCase("yes") || choice1.equalsIgnoreCase("y")){
+                if(choice2.equalsIgnoreCase("yes") || choice2.equalsIgnoreCase("y")){
                     System.out.println("You took a quiz for " + langLearn.toUpperCase() );
                     int score = languageInstance.getScore();
                     System.out.println("Your score: " + score + "/10");
                 }
+                System.out.println(decorativeLine2);
             }
 
         }

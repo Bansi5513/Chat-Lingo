@@ -72,46 +72,48 @@ public class chinese extends Language{
 
             // Basic Sentence Structure
             {
-                    {"Subject + Verb + Object", "我吃一个苹果 (I eat an apple)."}
+                    {"我吃一个苹果 (Subject + Verb + Object)", "I eat an apple."}
             }
     };
 
     private static final String[] chineseSectionTitles = {"Nouns and Articles", "Subject Pronouns", "Verb '是 (Shì)' (To Be)", "Verb '有 (Yǒu)' (To Have)", "Basic Sentence Structure"};
     int score;
     public void BeginnerLevel(){
-        System.out.println("\nBeginner Chinese Words:\n");
+        System.out.println("\n***** Beginner Chinese Words *****\n");
         for (String[] wordPair : chineseWordsWithTranslationsAndLevels[0]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
 
     public void IntermediateLevel(){
-        System.out.println("\nIntermediate Chinese Words:\n");
+        System.out.println("\n***** Intermediate Chinese Words *****\n");
         for (String[] wordPair : chineseWordsWithTranslationsAndLevels[1]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
 
     public void AdvancedLevel(){
-        System.out.println("\nAdvanced Chinese Words:\n");
+        System.out.println("\n***** Advanced Chinese Words *****\n");
         for (String[] wordPair : chineseWordsWithTranslationsAndLevels[2]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
 
     public void GrammarPractice(){
+        System.out.println("\n******************************************************************************************");
         for (int i = 0; i < chineseGrammarModule.length; i++) {
             System.out.println("[" + chineseSectionTitles[i] + "]");
             for (String[] topic : chineseGrammarModule[i]) {
                 for (int j = 0; j < topic.length; j += 2) {
-                    String french = topic[j];
+                    String chinese = topic[j];
                     String english = topic[j + 1];
-                    System.out.print("French: " + french + "\t\t\t");
+                    System.out.print("Chinese: " + chinese + "\t\t\t");
                     System.out.println("English: " + english);
                 }
             }
             System.out.println();
         }
+        System.out.println("******************************************************************************************");
     }
 
     public void TakeQuiz(){
@@ -123,7 +125,7 @@ public class chinese extends Language{
         boolean[] usedGrammarIndices = new boolean[chineseGrammarModule.length];
 
         // Quiz for basic words and translations
-        System.out.println("\nFrench Basic Word Quiz:");
+        System.out.println("\n******************** Chinese Basic Word Quiz ********************");
         for (int i = 0; i < 5; i++) {
             int randomIndex;
             do {
@@ -144,7 +146,7 @@ public class chinese extends Language{
         }
 
         // Quiz for grammar
-        System.out.println("\nFrench Grammar Quiz:");
+        System.out.println("\n******************** Chinese Grammar Quiz ********************");
         for (int i = 0; i < 5; i++) {
             int randomIndex;
             do {
@@ -154,17 +156,18 @@ public class chinese extends Language{
             usedGrammarIndices[randomIndex] = true;
 
             String[] sentencePair = chineseGrammarModule[randomIndex][0];
-            System.out.println("\nTranslate: " + sentencePair[1]);
+            System.out.println("\nTranslate: ");
+            System.out.println(sentencePair[0]);
             String userTranslation = sc.nextLine().trim();
-            if (userTranslation.equalsIgnoreCase(sentencePair[0])) {
+            if (userTranslation.equalsIgnoreCase(sentencePair[1])) {
                 System.out.println("Correct!");
                 score++;
             } else {
-                System.out.println("Incorrect. The correct answer is: " + sentencePair[0]);
+                System.out.println("Incorrect. The correct answer is: " + sentencePair[1]);
             }
         }
 
-        System.out.println("\nQuiz complete! Your score: " + score + " out of 10");
+        System.out.println("\nQUIZ COMPLETE! YOUR SCORE: " + score + " OUT OF 10");
     }
 
     public int getScore(){
