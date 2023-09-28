@@ -15,10 +15,19 @@ class UserInfo{
     }
 
     public void start(){
-        System.out.print("\nEnter your name : ");
-        name = sc.nextLine();
-        System.out.print("Enter the language you are comfortable to talk in : ");
-        lang = sc.nextLine();
+        try {
+            System.out.print("\nEnter your name : ");
+            name = sc.nextLine();
+            if (name.isEmpty()) {
+                throw new IllegalArgumentException("Name cannot be empty.");
+            }
+
+            System.out.print("Enter the language you are comfortable to talk in : ");
+            lang = sc.nextLine();
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid input: " + e.getMessage());
+        }
     }
 
 }

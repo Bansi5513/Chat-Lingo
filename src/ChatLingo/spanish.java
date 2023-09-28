@@ -71,46 +71,48 @@ class spanish extends Language{
 
             // Basic Sentence Structure
             {
-                    {"Subject + Verb + Object", "Yo como una manzana (I eat an apple)."}
+                    {"Yo como una manzana (Subject + Verb + Object)", "I eat an apple."}
             }
     };
 
     private static final String[] spanishSectionTitles = {"Nouns and Articles", "Subject Pronouns", "Verbs 'Ser' (To Be)", "Verbs 'Tener' (To Have)", "Basic Sentence Structure"};
     int score;
     public void BeginnerLevel(){
-        System.out.println("\nBeginner Spanish Words:\n");
+        System.out.println("\n***** Beginner Spanish Words *****\n");
         for (String[] wordPair : spanishWordsWithTranslationsAndLevels[0]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
 
     public void IntermediateLevel(){
-        System.out.println("\nIntermediate Spanish Words:\n");
+        System.out.println("\n***** Intermediate Spanish Words *****\n");
         for (String[] wordPair : spanishWordsWithTranslationsAndLevels[1]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
 
     public void AdvancedLevel(){
-        System.out.println("\nAdvanced Spanish Words:\n");
+        System.out.println("\n***** Advanced Spanish Words *****\n");
         for (String[] wordPair : spanishWordsWithTranslationsAndLevels[2]) {
             System.out.println(wordPair[0] + " - " + wordPair[1]);
         }
     }
 
     public void GrammarPractice(){
+        System.out.println("\n******************************************************************************************");
         for (int i = 0; i < spanishGrammarModule.length; i++) {
             System.out.println("[" + spanishSectionTitles[i] + "]");
             for (String[] topic : spanishGrammarModule[i]) {
                 for (int j = 0; j < topic.length; j += 2) {
-                    String french = topic[j];
+                    String spanish = topic[j];
                     String english = topic[j + 1];
-                    System.out.print("French: " + french + "\t\t\t");
+                    System.out.print("Spanish: " + spanish + "\t\t\t");
                     System.out.println("English: " + english);
                 }
             }
             System.out.println();
         }
+        System.out.println("******************************************************************************************");
     }
 
     public void TakeQuiz(){
@@ -122,7 +124,7 @@ class spanish extends Language{
         boolean[] usedGrammarIndices = new boolean[spanishGrammarModule.length];
 
         // Quiz for basic words and translations
-        System.out.println("\nFrench Basic Word Quiz:");
+        System.out.println("\n******************** Spanish Basic Word Quiz ********************");
         for (int i = 0; i < 5; i++) {
             int randomIndex;
             do {
@@ -143,7 +145,7 @@ class spanish extends Language{
         }
 
         // Quiz for grammar
-        System.out.println("\nFrench Grammar Quiz:");
+        System.out.println("\n\n******************** Spanish Grammar Quiz ********************");
         for (int i = 0; i < 5; i++) {
             int randomIndex;
             do {
@@ -163,7 +165,7 @@ class spanish extends Language{
             }
         }
 
-        System.out.println("\nQuiz complete! Your score: " + score + " out of 10");
+        System.out.println("\nQUIZ COMPLETE! YOUR SCORE: " + score + " OUT OF 10");
     }
 
     public int getScore(){

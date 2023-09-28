@@ -7,9 +7,12 @@ class LanguageLearningModule extends UserInfo{
     String choice;
     private String langLearn;
     private String level;
+    String decorativeLine = "--------------------------------------------------------";
 
     public void start(){
-        System.out.println("\nWelcome to the Language Learning Module!");
+        System.out.println("\n" + decorativeLine);
+        System.out.println("Welcome to the Language Learning Module!");
+        System.out.println(decorativeLine);
         System.out.println("\nThe languages ChatLingo currently offers are Spanish, French, German, Chinese and Hindi.");
         System.out.print("\nAre you learning any language currently or planning to learn a language that we offer [Y/N]? ");
         choice = sc.nextLine();
@@ -24,7 +27,7 @@ class LanguageLearningModule extends UserInfo{
             System.out.print("\nDo you want to continue to learn " + langLearn + " [Y/N]? ");
             choice = sc.nextLine();
             if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")){
-                System.out.println("Select a level : ");
+                System.out.println("\nSelect a level : ");
                 System.out.println("1. Beginner Level");
                 System.out.println("2. Intermediate Level");
                 System.out.println("3. Advanced Level");
@@ -52,7 +55,7 @@ class LanguageLearningModule extends UserInfo{
                 if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")){
                     System.out.print("\nEnter the language : ");
                     langLearn = sc.nextLine();
-                    System.out.println("Select a level : ");
+                    System.out.println("\nSelect a level : ");
                     System.out.println("1. Beginner Level");
                     System.out.println("2. Intermediate Level");
                     System.out.println("3. Advanced Level");
@@ -80,7 +83,7 @@ class LanguageLearningModule extends UserInfo{
             if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")){
                 System.out.print("\nEnter the language : ");
                 langLearn = sc.nextLine();
-                System.out.println("Select a level : ");
+                System.out.println("\nSelect a level : ");
                 System.out.println("1. Beginner Level");
                 System.out.println("2. Intermediate Level");
                 System.out.println("3. Advanced Level");
